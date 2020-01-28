@@ -1,3 +1,10 @@
+/*
+  Hello user.
+  Please don't use these firebase credentials to pointlessly download excessive data and surpass my gcloud limits.
+  If you do this I will find you, and I will DDOS you (I have your IP, obviously).
+  #TrustTheClient #QuotaTheftIsACrime #ImKiddingDDOSingIsIllegalButStillPleaseDont
+*/
+
 const firebaseConfig = {
   apiKey: "AIzaSyBPDWN3lP_wg3zSaCRBaIIwnu_lwlVkgPQ",
   authDomain: "mattyhempstead.firebaseapp.com",
