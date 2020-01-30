@@ -5,6 +5,8 @@
   #TrustTheClient #QuotaTheftIsACrime #ImKiddingDDOSingIsIllegalButStillPleaseDont
 */
 
+import firebase from 'firebase';
+
 const firebaseConfig = {
   apiKey: "AIzaSyBPDWN3lP_wg3zSaCRBaIIwnu_lwlVkgPQ",
   authDomain: "mattyhempstead.firebaseapp.com",
@@ -16,10 +18,11 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Initialise firestore path to reacts
-const db = firebase.firestore();
-const dbReacts = db.collection('heart-react').doc('data').collection('reacts');
+const dbRef = firebase.firestore();
+const reactsRef = dbRef.collection('heart-react').doc('data').collection('reacts');
 
 // Initialise bucket storage to historical reacts
 const storage = firebase.storage();
-const storageRef = storage.ref();
-const historyRef = storageRef.child('heart-react').child('history');
+const historyRef = storage.ref().child('heart-react').child('history');
+
+export { reactsRef, historyRef }
