@@ -1,22 +1,39 @@
 import React from 'react';
+
 import './App.css';
-import { reactsRef } from '../util/firebase';
+import './HeartReactTable'
+
 import getHistoricalReacts from '../util/getHistoricalReacts';
+import HeartReactTable from './HeartReactTable';
+import HeartReact from '../types/HeartReact';
 
-class App extends React.Component {
-  componentDidMount() {
+type State = {
+  reacts: HeartReact[]
+}
 
-    reactsRef.doc('sFBgiQ9UZx24bE4RTXxL').get().then(data => {
-      console.log(data.data())
+class App extends React.Component<{}, State> {
+  constructor(props: {}) {
+    super(props);
+
+    this.state = {
+      reacts: [],
+    }
+
+    // reactsRef.doc('sFBgiQ9UZx24bE4RTXxL').get().then(data => {
+    //   console.log(data.data())
+    // })
+
+    getHistoricalReacts(new Date().toISOString().substr(0, 10)).then(reacts => {
+      this.setState({
+        reacts: reacts,
+      })
     })
-
-    getHistoricalReacts('2020-01-01').then(data => console.log(data))
 
   }
   render() {
     return (
       <div className="App">
-        Test
+        <HeartReactTable reacts={this.state.reacts} />
       </div>
     );  
   }

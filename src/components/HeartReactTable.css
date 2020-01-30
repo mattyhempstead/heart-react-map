@@ -1,0 +1,19 @@
+.HeartReactTable > table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.HeartReactTable th {
+    text-align: left;
+    padding: 5px;
+    background-color: lightblue;
+}
+
+.HeartReactTable td {
+    padding: 3px;    
+}
+
+.HeartReactTable td,
+.HeartReactTable th {
+    border: 1px solid black;
+}
