@@ -31,26 +31,27 @@ class HeartReactTable extends React.Component<Props> {
 
     return (
       <div className="HeartReactTable">
-        <table>
-          <thead>
-            <tr>
-              <th>id</th>
-              <th>timestamp</th>
-              <th>uid</th>
-              <th>utc_offset</th>
-              <th>lon</th>
-              <th>lat</th>
-              <th>city</th>
-              <th>region</th>
-              <th>country</th>
-              <th>continent</th>
-            </tr>
-          </thead>
-          <tbody>
-            {heartReactRows}
-          </tbody>
-        </table>
-
+        <div className = "tableContainer">
+          <table>
+            <thead>
+              <tr>
+                <th style={{width:'11%'}}>id</th>
+                <th style={{width:'11%'}}>timestamp</th>
+                <th style={{width:'6%'}}>uid</th>
+                <th style={{width:'6%'}}>utc_offset</th>
+                <th style={{width:'6%'}}>lon</th>
+                <th style={{width:'6%'}}>lat</th>
+                <th style={{width:'16%'}}>city</th>
+                <th style={{width:'16%'}}>region</th>
+                <th style={{width:'13%'}}>country</th>
+                <th style={{width:'9%'}}>continent</th>
+              </tr>
+            </thead>
+            <tbody>
+              {heartReactRows}
+            </tbody>
+          </table>
+        </div>
       </div>
     );  
   }
