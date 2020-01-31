@@ -5,6 +5,7 @@ import './HeartReactTable'
 
 import getHistoricalReacts from '../util/getHistoricalReacts';
 import HeartReactTable from './HeartReactTable';
+import HeartReactMap from './HeartReactMap';
 import HeartReact from '../types/HeartReact';
 
 type State = {
@@ -33,6 +34,7 @@ class App extends React.Component<{}, State> {
   render() {
     return (
       <div className="App">
+        <HeartReactMap />
         <HeartReactTable reacts={this.state.reacts} />
       </div>
     );  

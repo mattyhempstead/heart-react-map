@@ -1,0 +1,6 @@
+.HeartReactMap > .mapImage {
+    height: 65vh;
+    border: 4px solid black;
+    margin: auto;
+    margin-bottom: 1vh;    
+}
