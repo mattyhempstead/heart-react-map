@@ -20,17 +20,33 @@ class App extends React.Component<{}, State> {
       reacts: [],
     }
 
-    // reactsRef.doc('sFBgiQ9UZx24bE4RTXxL').get().then(data => {
-    //   console.log(data.data())
-    // })
+    this.getReacts();
 
-    getHistoricalReacts(new Date().toISOString().substr(0, 10)).then(reacts => {
-      this.setState({
-        reacts: reacts,
-      })
+  }
+
+  /**
+   * Puts reacts (live and historical) into the state
+   */
+  getReacts = async () => {
+
+    const historicalReacts = await getHistoricalReacts(new Date().toISOString().substr(0, 10));
+    this.setState({
+      reacts: historicalReacts,
+    }, () => {
+      this.getLiveReacts();
     })
 
   }
+
+  /**
+   * Starts tracking live reacts
+   */
+  getLiveReacts = async () => {
+    // reactsRef.doc('sFBgiQ9UZx24bE4RTXxL').get().then(data => {
+    //   console.log(data.data())
+    // })
+  }
+
   render() {
     return (
       <div className="App">
