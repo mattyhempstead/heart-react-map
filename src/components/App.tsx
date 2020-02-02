@@ -89,7 +89,7 @@ class App extends React.Component<{}, State> {
   render() {
     return (
       <div className="App">
-        <HeartReactMap />
+        <HeartReactMap reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
         <HeartReactTable reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
       </div>
     );  
