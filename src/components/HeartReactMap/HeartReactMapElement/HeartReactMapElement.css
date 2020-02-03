@@ -1,0 +1,16 @@
+.HeartReactMapElement {
+    position: absolute;
+}
+
+.HeartReactMapElement .mapHeart {
+    position: absolute;
+    width: 1vw;
+    margin-left: -0.5vw;
+    margin-top: -1vw;
+}
+
+.HeartReactMapElement .mapHeart:hover + .HeartReactMapHoverBox {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s, visibility 0.5s;
+}

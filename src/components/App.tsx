@@ -1,11 +1,9 @@
 import React from 'react';
 
 import './App.css';
-import './HeartReactTable'
-
 import getHistoricalReacts from '../util/getHistoricalReacts';
 import HeartReactTable from './HeartReactTable';
-import HeartReactMap from './HeartReactMap';
+import HeartReactMap from './HeartReactMap/HeartReactMap';
 import HeartReact from '../types/HeartReact';
 import { reactsRef } from '../util/firebase';
 

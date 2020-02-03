@@ -18,10 +18,3 @@
     height: 65vh;
     width: 150vh;
 }
-
-.HeartReactMap .mapHeart {
-    position: absolute;
-    width: 1vw;
-    margin-left: -0.5vw;
-    margin-top: -1vw;
-}

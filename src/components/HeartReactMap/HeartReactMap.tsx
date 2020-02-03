@@ -1,9 +1,9 @@
 import React from 'react';
 
-import mapImage from '../resources/map.png';
-import heartImage from '../resources/heart.png'
 import './HeartReactMap.css'
-import HeartReact from '../types/HeartReact';
+import mapImage from '../../resources/map.png';
+import HeartReact from '../../types/HeartReact';
+import HeartReactMapElement from './HeartReactMapElement/HeartReactMapElement';
 
 type Props = {
   reacts: HeartReact[]
@@ -19,23 +19,18 @@ class HeartReactMap extends React.Component<Props, State> {
 
   }
   render() {
-    const overlayHearts:JSX.Element[] = [];
+    
+    const mapOverlayElements:JSX.Element[] = [];
     const HEART_RENDER_COUNT = 100;
 
     this.props.reacts.slice(-HEART_RENDER_COUNT).forEach((react,idx) => {
-      overlayHearts.push(
-        <img className={"mapHeart " + react.id} src={heartImage} key={react.id} style={{
-          top: `${100 * (90 - react.lat)/150}%`,
-          left: `${100 * (180 + react.lon)/360}%`,
-          opacity: ((idx+1) / HEART_RENDER_COUNT)
-        }} />
-      )
+      mapOverlayElements.push(<HeartReactMapElement react={react} key={react.id} />)
     })
 
     return (
       <div className="HeartReactMap">
         <img className="mapImage" src={mapImage} alt='map'></img>
-        <div className="mapOverlay">{overlayHearts}</div>
+        <div className="mapOverlay">{mapOverlayElements}</div>
       </div>
     );  
   }
