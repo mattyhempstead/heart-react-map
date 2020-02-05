@@ -1,0 +1,90 @@
+.Sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 2.8vw;
+    height: 100%;
+    background-color: #222;
+    z-index: 1;
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: width 0.5s;
+    font-size: 2rem;
+}
+
+.Sidebar:hover {
+    width: 18vw;
+    transition: width 0.5s;
+}
+
+.Sidebar .expanded-content {
+    width: 15.2vw;
+    display: inline-block;
+    padding-left: 0.5vw;
+    height: 70%;
+    vertical-align: middle;
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s linear, opacity 0.5s;
+}
+
+.Sidebar:hover .expanded-content {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s linear, opacity 0.5s;
+}
+
+.Sidebar .contracted-content {
+    display: inline-block;
+    width: 2.8vw;
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.Sidebar .sidebar-header {
+    height: 2.8vw;
+}
+
+.Sidebar .sidebar-header img {
+    width: 2vw;
+    display: block;
+    margin: auto;
+    margin-top: 0.4vw;
+}
+
+.Sidebar .top-seperator {
+    width: 2vw;
+    height: 2px;
+    margin-left: 0.4vw;
+    margin-bottom: 0.5vw;
+    background-color: grey;
+    border-radius: 1px;
+    transition: width 0.5s;
+}
+
+.Sidebar:hover .top-seperator {
+    width: 17.2vw;
+    transition: width 0.5s;
+}
+
+.Sidebar .nav-link {
+    height: 2.8vw;
+    cursor: pointer;
+}
+
+.Sidebar .nav-link.selected {
+    background-color: #444;
+}
+
+.Sidebar .nav-link:hover {
+    background-color: #444;
+}
+
+.Sidebar .nav-link img {
+    display: block;
+    margin: 0.4vw;
+    width: 2.0vw;
+}

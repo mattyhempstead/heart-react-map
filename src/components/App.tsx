@@ -6,6 +6,7 @@ import HeartReactTable from './HeartReactTable';
 import HeartReactMap from './HeartReactMap/HeartReactMap';
 import HeartReact from '../types/HeartReact';
 import { reactsRef } from '../util/firebase';
+import Sidebar from './Sidebar';
 
 type State = {
   reacts: Record<string, HeartReact>
@@ -29,6 +30,11 @@ class App extends React.Component<{}, State> {
   getReacts = async () => {
     const historicalReacts = await getHistoricalReacts(new Date().toISOString().substr(0, 10));
     await this.storeNewReacts(historicalReacts);
+
+    // await this.storeNewReacts(await getHistoricalReacts(new Date(new Date().setDate(new Date().getDate()-1)).toISOString().substr(0, 10)));
+    // await this.storeNewReacts(await getHistoricalReacts(new Date(new Date().setDate(new Date().getDate()-2)).toISOString().substr(0, 10)));
+    // await this.storeNewReacts(await getHistoricalReacts(new Date(new Date().setDate(new Date().getDate()-3)).toISOString().substr(0, 10)));
+
     this.getLiveReacts(historicalReacts[historicalReacts.length-1]);
   }
 
@@ -87,8 +93,11 @@ class App extends React.Component<{}, State> {
   render() {
     return (
       <div className="App">
-        <HeartReactMap reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
-        <HeartReactTable reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
+        <Sidebar />
+        <div style={{ marginLeft: '3vw', paddingLeft: '0.4vw', paddingTop: '0.4vw' }}>
+          <HeartReactMap reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
+          <HeartReactTable reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
+        </div>
       </div>
     );  
   }
