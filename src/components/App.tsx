@@ -8,6 +8,7 @@ import HeartReactMap from './HeartReactMap/HeartReactMap';
 import HeartReact from '../types/HeartReact';
 import { reactsRef } from '../util/firebase';
 import Sidebar from './Sidebar';
+import InfoPage from './InfoPage/InfoPage';
 
 type State = {
   reacts: Record<string, HeartReact>
@@ -98,11 +99,14 @@ class App extends React.Component<{}, State> {
           <Sidebar />
           <div style={{ marginLeft: '3vw', padding: '0.5vw' }}>
             <Switch>
-              <Route path="/map">
+              <Route exact path="/">
+                <InfoPage />
+              </Route>
+              <Route exact path="/map">
                 <HeartReactMap reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
                 <HeartReactTable reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
               </Route>
-              <Route path="/stats">
+              <Route exact path="/stats">
                 STATS
               </Route>
             </Switch>

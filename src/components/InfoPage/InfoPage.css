@@ -1,0 +1,28 @@
+.InfoPage {
+    text-align: left;
+    padding-top: 1em;
+}
+
+.InfoPage .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 0.6em;
+    text-align: center;
+}
+
+.InfoPage .desc {
+    font-size: 1.2em;
+    /* font-family: Arial; */
+    width: 65%;
+    margin: auto;
+}
+
+.InfoPage .sub-title {
+    font-size: 1.5em;
+    margin-bottom: 0.4em;
+}
+
+.InfoPage a {
+    color: green;
+}
