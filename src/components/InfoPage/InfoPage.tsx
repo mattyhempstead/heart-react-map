@@ -51,7 +51,7 @@ const InfoPage = () => {
         
         <br/><br/>
 
-        It's understandable that people many not want their IP's exposed to the public,
+        It's understandable that people may not want their IP's exposed to the public,
         thus all visualisation data I provide has had the IP substituted with a incrementing UID.
 
         Remember that if I really wanted to steal your data, you are allowing me to execute arbitrary JavaScript on your facebook
