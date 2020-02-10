@@ -5,13 +5,11 @@
 .HeartReactMap > .mapImage {
     height: 65vh;
     width: 150vh;
-    border: 4px solid black;
     margin: auto;
-    margin-bottom: 1vh;    
+    margin-bottom: 0.5vw;    
 }
 
 .HeartReactMap > .mapOverlay {
-    margin: 4px;
     position: absolute;
     top: 0px;
     left: 0px;

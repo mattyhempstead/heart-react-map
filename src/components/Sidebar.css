@@ -28,6 +28,7 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.5s linear, opacity 0.5s;
+    color: white;
 }
 
 .Sidebar:hover .expanded-content {
@@ -60,6 +61,7 @@
     width: 2.2vw;
     height: 2px;
     margin-left: 0.4vw;
+    margin-top: 0.4vw;
     margin-bottom: 0.5vw;
     background-color: grey;
     border-radius: 1px;

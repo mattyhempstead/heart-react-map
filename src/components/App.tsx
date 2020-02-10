@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 import getHistoricalReacts from '../util/getHistoricalReacts';
@@ -93,13 +94,22 @@ class App extends React.Component<{}, State> {
   render() {
     return (
       <div className="App">
-        <Sidebar />
-        <div style={{ marginLeft: '3vw', paddingLeft: '0.4vw', paddingTop: '0.4vw' }}>
-          <HeartReactMap reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
-          <HeartReactTable reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
-        </div>
+        <BrowserRouter>
+          <Sidebar />
+          <div style={{ marginLeft: '3vw', padding: '0.5vw' }}>
+            <Switch>
+              <Route path="/map">
+                <HeartReactMap reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
+                <HeartReactTable reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
+              </Route>
+              <Route path="/stats">
+                STATS
+              </Route>
+            </Switch>
+          </div>
+        </BrowserRouter>
       </div>
-    );  
+    );
   }
 }
 
