@@ -48,6 +48,7 @@
 
 .Sidebar .sidebar-header {
     height: 3vw;
+    font-weight: bold;
 }
 
 .Sidebar .sidebar-header img {
