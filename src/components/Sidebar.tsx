@@ -11,7 +11,7 @@ const Sidebar = function() {
 
   return (
     <div className="Sidebar">
-      <Link to="/">
+      <Link to="/heart-react/">
         <div className="sidebar-header">
           <div className="contracted-content">
             <img src={heartImage} alt="heart" />
@@ -24,7 +24,7 @@ const Sidebar = function() {
 
       <div className="top-seperator" />
 
-      <Link to="/">
+      <Link to="/heart-react/">
         <div className={`nav-link ${loc.pathname === '/' && 'selected'}`}>
           <div className="contracted-content">
             <img src={infoImage} alt="globe" />
@@ -35,7 +35,7 @@ const Sidebar = function() {
         </div>
       </Link>
 
-      <Link to="/map">
+      <Link to="/heart-react/map/">
         <div className={`nav-link ${loc.pathname === '/map' && 'selected'}`}>
           <div className="contracted-content">
             <img src={globeImage} alt="globe" />
@@ -46,7 +46,7 @@ const Sidebar = function() {
         </div>
       </Link>
       
-      <Link to="/stats">
+      <Link to="/heart-react/stats/">
         <div className={`nav-link ${loc.pathname === '/stats' && 'selected'}`}>
           <div className="contracted-content">
           <img src={statsImage} alt="stats" />

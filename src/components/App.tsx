@@ -99,14 +99,14 @@ class App extends React.Component<{}, State> {
           <Sidebar />
           <div style={{ marginLeft: '3vw', padding: '0.5vw' }}>
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/heart-react">
                 <InfoPage />
               </Route>
-              <Route exact path="/map">
+              <Route exact path="/heart-react/map">
                 <HeartReactMap reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
                 <HeartReactTable reacts={Object.values(this.state.reacts).sort((a,b) => a.timestamp.getTime() - b.timestamp.getTime())} />
               </Route>
-              <Route exact path="/stats">
+              <Route exact path="/heart-react/stats">
                 STATS
               </Route>
             </Switch>
