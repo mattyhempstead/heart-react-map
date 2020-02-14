@@ -1,0 +1,10 @@
+.StatsPage {
+    text-align: center;
+}
+
+.StatsPage > div {
+    margin: auto;
+    /* background-color: blue; */
+    width: 1200px;
+    margin-top: 3em;
+}

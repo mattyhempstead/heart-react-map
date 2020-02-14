@@ -131,7 +131,7 @@ class App extends React.Component<{}, State> {
                 <HeartReactTable reacts={this.state.reacts} />
               </Route>
               <Route exact path="/heart-react/stats">
-                STATS
+                <StatsPage reacts={this.state.reacts} />
               </Route>
             </Switch>
           </div>
