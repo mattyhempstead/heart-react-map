@@ -21,11 +21,12 @@ class HeartReactMap extends React.Component<Props, State> {
   render() {
     
     const mapOverlayElements:JSX.Element[] = [];
-    const HEART_RENDER_COUNT = 100;
 
-    this.props.reacts.slice(-HEART_RENDER_COUNT).forEach((react,idx) => {
-      mapOverlayElements.push(<HeartReactMapElement react={react} key={react.id} />)
-    })
+    this.props.reacts
+      .filter(react => new Date().getTime() - react.timestamp.getTime() < 1000 * 60 * 60 * 24)
+      .forEach((react,idx) => {
+        mapOverlayElements.push(<HeartReactMapElement react={react} key={react.id} />)
+      })
 
     return (
       <div className="HeartReactMap">
