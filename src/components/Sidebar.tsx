@@ -31,7 +31,7 @@ const Sidebar = function() {
             <img src={infoImage} alt="globe" />
           </div>
           <div className="expanded-content">
-            What?
+            Info
           </div>
         </div>
       </Link>
