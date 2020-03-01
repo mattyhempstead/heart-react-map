@@ -8,6 +8,7 @@ import './Sidebar.css';
 
 const Sidebar = function() {
   const loc = useLocation();
+  console.log(loc.pathname);
 
   return (
     <div className="Sidebar">
@@ -25,7 +26,7 @@ const Sidebar = function() {
       <div className="top-seperator" />
 
       <Link to="/heart-react/">
-        <div className={`nav-link ${loc.pathname === '/' && 'selected'}`}>
+        <div className={`nav-link ${loc.pathname === '/heart-react/' && 'selected'}`}>
           <div className="contracted-content">
             <img src={infoImage} alt="globe" />
           </div>
@@ -36,7 +37,7 @@ const Sidebar = function() {
       </Link>
 
       <Link to="/heart-react/map/">
-        <div className={`nav-link ${loc.pathname === '/map' && 'selected'}`}>
+        <div className={`nav-link ${loc.pathname === '/heart-react/map/' && 'selected'}`}>
           <div className="contracted-content">
             <img src={globeImage} alt="globe" />
           </div>
@@ -47,7 +48,7 @@ const Sidebar = function() {
       </Link>
       
       <Link to="/heart-react/stats/">
-        <div className={`nav-link ${loc.pathname === '/stats' && 'selected'}`}>
+        <div className={`nav-link ${loc.pathname === '/heart-react/stats/' && 'selected'}`}>
           <div className="contracted-content">
           <img src={statsImage} alt="stats" />
           </div>
