@@ -8,7 +8,6 @@ import './Sidebar.css';
 
 const Sidebar = function() {
   const loc = useLocation();
-  console.log(loc.pathname);
 
   return (
     <div className="Sidebar">
